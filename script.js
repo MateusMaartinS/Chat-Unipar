@@ -65,3 +65,19 @@ function enterChatRoom() {
             document.getElementById("messageInput").value = '';
         }
     }
+
+    function leaveChat(){
+        if (stompClient){
+            var chatMessage = {
+                sender: username,
+                type: 'LEAVE'
+            };
+        stompClient.send("/app/leaveUser",{},JSON.stringify(chatMessage));
+        stompClient.disconnect(()=>{
+            console.log("Disconectado");
+            document.getElementById("chat-room").style.display = "none";
+            document.getElementById("welcome-form").style.display = "block";
+            
+        })
+        }
+    }
