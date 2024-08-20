@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Chat Unipar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome-form">
+        <h2>Seja Bem Vindo ao Chat Unipar!</h2>
+        <input type="text" id="username" placeholder="Escolha seu nome de usuário">
+        <button onclick="enterChatRoom()">Acessar A Sala de Bate-Papo</button>
+    </div>
+
+    <div id="chat-room">
+        <h2>Sala de Bate-Papo UNIPAR</h2>
+        <div id="messages"></div>
+        <input type="text" id="messageInput" placeholder="Digite sua mensagem"/>
+        <button onclick="sendMessage()">Enviar</button>
+        <button onclick="leaveChat()">Sair da Sala</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>    
+    <script src="script.js"></script>
+</body>
+</html>
