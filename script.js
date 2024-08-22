@@ -3,18 +3,23 @@ var username = null;
 
 document.getElementById("welcome-form").style.display = "block";
 
-function enterChatRoom() {
-
-    username = document.getElementById("username").value.trim();
-
-    if(username){
-        document.getElementById("welcome-form").style.display = "none";
-        document.getElementById("chat-room").style.display = "block";
-        connect();
-    }else{
-        alert("Por favor, inserir um nickname");
+    function enterChatRoom() {
+        username = document.getElementById("username").value.trim();
+    
+        if(username){
+            var welcomeForm = document.getElementById("welcome-form");
+            welcomeForm.classList.add('hide');
+            setTimeout(() => {
+                welcomeForm.style.display = 'none';
+                var chatRoom = document.getElementById('chat-room');
+                chatRoom.style.display = 'block';
+                setTimeout(() => { chatRoom.classList.add('show'); }, 10);
+            }, 550);
+            connect();
+        } else {
+            alert("Por favor, inserir um nickname");
+        }
     }
-}
 
     function connect() {
 
@@ -74,10 +79,20 @@ function enterChatRoom() {
             };
         stompClient.send("/app/leaveUser",{},JSON.stringify(chatMessage));
         stompClient.disconnect(()=>{
-            console.log("Disconectado");
-            document.getElementById("chat-room").style.display = "none";
-            document.getElementById("welcome-form").style.display = "block";
-            
-        })
+            console.log("Desconectado");
+
+        
+            var chatRoom = document.getElementById("chat-room");
+            chatRoom.classList.remove('show');
+            setTimeout(() => {
+                chatRoom.style.display = "none";
+                var welcomeForm = document.getElementById('welcome-form');
+                welcomeForm.style.display = 'block';
+                setTimeout(() => { welcomeForm.classList.remove('hide'); }, 10);
+            }, 550); 
+        });
+
+
+        
         }
     }
