@@ -36,16 +36,16 @@ body {
 
 #welcome-form button {
     font-family: 'Courier New', monospace;
-
     border-radius: 8px;
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;
+
 }
 
 #chat-room {
     opacity: 0;
-    text-align: center;
+    text-align: left;
     
     font-family: 'Courier New', monospace;
     padding: 20px;
@@ -81,17 +81,18 @@ body {
     opacity: 1;
 }
 
-
-
 #messages {
     border: solid 1px #808080;
     font-family: 'Courier New', monospace;
-    background-color: #f0f0f0;
+    background-color: #ebebebd5;
     padding: 10px;
     height: 300px;
     overflow-y: scroll;
     margin-bottom: 10px;
+    text-align:  left;
+
 }
+
 
 #messageInput {
     border-radius: 8px;
@@ -100,10 +101,35 @@ body {
     width: calc(100% - 18px);
 }
 
+
 #chat-room button {
     border-radius: 8px;
     font-family: 'Courier New', monospace;
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+#enviar {
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+    cursor: pointer;
+    float: left; 
+}
+
+#enviar:hover {
+    background-color: #45a049;
+}
+
+#sair {
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+    cursor: pointer;
+    float: right; 
+}
+
+#sair:hover {
+    background-color: #c00000;
 }

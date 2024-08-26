@@ -17,9 +17,10 @@
         <h2>Sala de Bate-Papo UNIPAR</h2>
         <div id="messages"></div>
         <input type="text" id="messageInput" placeholder="Digite sua mensagem"/>
-        <button onclick="sendMessage()">Enviar</button>
-        <button onclick="leaveChat()">Sair da Sala</button>
-    </div>
+        <div id="buttons-container">
+        <button id="enviar" onclick="sendMessage()">Enviar</button>
+        <button id="sair" onclick="leaveChat()">Sair da Sala</button>
+    </div></div>
 
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>    
