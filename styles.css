@@ -5,7 +5,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #000000;
+    background-color: #ffffff;
     overflow: hidden;
 }
 
@@ -19,19 +19,21 @@ body {
     padding: 20px;
     margin: 0 auto;
     width: 100%;
+    border: 2px dashed #000000;
     max-width: 400px;
-    background-color: #fff;
-    border-radius: 8px;
+    background-color:transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 #welcome-form input {
-    border-radius: 8px;
+    border: none;
+    border-bottom: 2px groove  #000;
     font-family: 'Courier New', monospace;
-
+    
     padding: 8px;
-    margin-top: 10px;
-    width: calc(100% - 18px); 
+    width: calc(100% - 18px);
+    background: transparent;
 }
 
 #welcome-form button {
@@ -46,14 +48,13 @@ body {
 #chat-room {
     opacity: 0;
     text-align: left;
-    
+    border: 2px dashed #000000;
     font-family: 'Courier New', monospace;
     padding: 20px;
     margin: 20px auto;
     width: 100%;
     max-width: 600px;
-    background-color: #fff;
-    border-radius: 8px;
+    background-color:transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
 }
@@ -82,9 +83,9 @@ body {
 }
 
 #messages {
-    border: solid 1px #808080;
+    border: 3px double #000000;
     font-family: 'Courier New', monospace;
-    background-color: #ebebebd5;
+    background-color: #ffffffd5;
     padding: 10px;
     height: 300px;
     overflow-y: scroll;
@@ -93,12 +94,14 @@ body {
 
 }
 
-
 #messageInput {
-    border-radius: 8px;
+    border: none;
+    border-bottom: 2px groove #000;
     font-family: 'Courier New', monospace;
     padding: 8px;
     width: calc(100% - 18px);
+
+    
 }
 
 
@@ -118,9 +121,6 @@ body {
     float: left; 
 }
 
-#enviar:hover {
-    background-color: #45a049;
-}
 
 #sair {
     border-radius: 8px;
@@ -130,6 +130,87 @@ body {
     float: right; 
 }
 
-#sair:hover {
-    background-color: #c00000;
+.ascii-button-welcome {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+.ascii-button-welcome pre {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.ascii-button-welcome:hover pre {
+    color: #1957ff; 
+}
+
+.ascii-button-enviar {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+.ascii-button-enviar pre {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.ascii-button-enviar:hover pre {
+    color: #249c00; 
+}
+
+.ascii-button-sair {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+.ascii-button-sair pre {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.ascii-button-sair:hover pre {
+    color: #c20000; 
+}
+
+
+/* Tema Escuro */
+.dark-theme {
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.5s ease-in-out;
+}
+
+.dark-theme #welcome-form, .dark-theme #chat-room {
+    border-color: #ffffff;
+    transition: 0.5s ease-in-out;
+
+}
+
+.dark-theme .ascii-button-welcome pre,
+.dark-theme .ascii-button-enviar pre,
+.dark-theme .ascii-button-sair pre {
+    color: #ffffff;
+    transition: 0.5s ease-in-out;
+
 }
