@@ -6,11 +6,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="toggle-theme">Alternar Tema</button>
     
     <div id="welcome-form" >
         <h2>Seja Bem Vindo ao Chat Unipar!</h2>
         <input type="text" id="username" placeholder="Escolha seu nome de usuário">
-        <button onclick="enterChatRoom()">Acessar A Sala de Bate-Papo</button>
+        <!--<button onclick="enterChatRoom()">Acessar A Sala de Bate-Papo</button>-->
+        <button class="ascii-button-welcome" onclick="enterChatRoom()">
+            <pre>
++--------------------------------+
+|  Acessar A Sala de Bate-Papo   |
++--------------------------------+
+            </pre>
+        </button>    
     </div>
 
     <div id="chat-room">
@@ -18,8 +26,26 @@
         <div id="messages"></div>
         <input type="text" id="messageInput" placeholder="Digite sua mensagem"/>
         <div id="buttons-container">
-        <button id="enviar" onclick="sendMessage()">Enviar</button>
-        <button id="sair" onclick="leaveChat()">Sair da Sala</button>
+        <!--<button id="enviar" onclick="sendMessage()">Enviar</button>-->
+        <!--<button id="sair" onclick="leaveChat()">Sair da Sala</button>-->    
+        
+        
+        <button id="enviar" class="ascii-button-enviar" onclick="sendMessage()">
+            <pre>
++-----------+
+|  Enviar   |
++-----------+
+            </pre>
+            <button id="sair"class="ascii-button-sair" onclick="leaveChat()">
+            <pre>
+        +--------+
+        |  Sair  |
+        +--------+
+            </pre>
+            </button>  
+        
+
+
     </div></div>
 
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
